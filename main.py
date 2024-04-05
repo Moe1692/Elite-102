@@ -1,3 +1,13 @@
+import mysql.connector
+connection = mysql.connector.connect(user = 'root', database = 'bank_users', password = '')
+cursor = connection.cursor()
+testQuery = ("SELECT * FROM bank_users")
+cursor.execute(testQuery)
+for item in cursor:
+    print(item)
+cursor.close()
+connection.close()
+
 def home_page():
     print("-" * 20 + "\n")
     print("Bank System\n")
@@ -16,8 +26,8 @@ def user_page():
 def admin_page():
     print("-" * 20 + "\n")
     print("Welcome, admin\n")
-    print("4. Modify account attributes")
-    print("5. Close account")
+    print("1. Modify account attributes")
+    print("2. Close account")
     print("\n" + "-" * 20 + "\n")
 
 home_page()
