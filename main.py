@@ -1,5 +1,5 @@
 import mysql.connector
-connection = mysql.connector.connect(user = 'root', database = 'bank_users', password = '')
+connection = mysql.connector.connect(user = 'root', database = 'elite102', password = 'A6&71B!iq')
 cursor = connection.cursor()
 testQuery = ("SELECT * FROM bank_users")
 cursor.execute(testQuery)
