@@ -1,35 +1,23 @@
-import mysql.connector
+import mysql.connector, time
+from pages import *
 connection = mysql.connector.connect(user = 'root', database = 'elite102', password = 'A6&71B!iq')
 cursor = connection.cursor()
-testQuery = ("SELECT * FROM bank_users")
+testQuery = ("SELECT Balance FROM bank_users")
 cursor.execute(testQuery)
 for item in cursor:
-    print(item)
+    print(item[0])
+
+time.sleep(1)
+home_page()
+time.sleep(0.5)
+option = input("Enter corresponding number from the list above: ")
+if(option == "1"):
+    user = input("Enter username: ")
+    password = input("Enter password: ")
+    cursor.execute(f"SELECT Name FROM bank_users WHERE Username = '{user}' AND Password = '{password}'")
+    for item in cursor:
+        print(item[0])
+
+
 cursor.close()
 connection.close()
-
-def home_page():
-    print("-" * 20 + "\n")
-    print("Bank System\n")
-    print("1. Log In")
-    print("2. Sign Up")
-    print("\n" + "-" * 20 + "\n")
-
-def user_page():
-    print("-" * 20 + "\n")
-    print("Welcome, user\n")
-    print("1. Check balance")
-    print("2. Deposit")
-    print("3. Withdraw")
-    print("\n" + "-" * 20 + "\n")
-
-def admin_page():
-    print("-" * 20 + "\n")
-    print("Welcome, admin\n")
-    print("1. Modify account attributes")
-    print("2. Close account")
-    print("\n" + "-" * 20 + "\n")
-
-home_page()
-user_page()
-admin_page()
