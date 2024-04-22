@@ -2,7 +2,7 @@ def home_page():
     print("-" * 20 + "\n")
     print("Bank System\n")
     print("1. Log In")
-    print("2. Sign Up\n")
+    
 
 def user_page():
     print("-" * 20 + "\n")
@@ -14,5 +14,6 @@ def user_page():
 def admin_page():
     print("-" * 20 + "\n")
     print("Welcome, admin\n")
-    print("1. Modify account attributes")
-    print("2. Close account\n")
+    print("1. Create a new account")
+    print("2. Modify account attributes")
+    print("3. Close account\n")
