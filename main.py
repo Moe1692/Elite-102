@@ -75,6 +75,8 @@ def user_page_loop(id):
         deposit(id)
     if(option == '3'):
         withdraw(id)
+    if(option == "4"):
+        home()
 
 def home():
     home_page()
@@ -96,6 +98,8 @@ def admin_page_loop():
         modify()
     if(option == "3"):
         close()
+    if(option == "4"):
+        home()
 
 home()
 
