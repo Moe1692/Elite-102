@@ -1,8 +1,6 @@
 def home_page():
     print("-" * 20 + "\n")
     print("Bank System\n")
-    print("1. Log In")
-    
 
 def user_page():
     print("-" * 20 + "\n")
